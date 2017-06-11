@@ -1,0 +1,36 @@
+/* Alice Liu 2017 */
+/* Alterations to Bootstrap code; some code taken from www.w3schools.com */
+
+/* reset the default navbar alignment */
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+	background-color: #0d661f;
+	color: white;
+}
+
+/* set height of the grid so .sidenav can be 100% */
+.row.content {height: 450px}
+
+/* make sidebars be light green and 20px away from everything else */
+.sidenav {
+	background-color: #d2f2d9;
+	height: 100%;
+	padding: 20px;
+}
+
+/* footer is dark green with white text */
+footer {
+	background-color: #555;
+	color: white;
+	padding: 15px;
+}
+
+/* adjust to smaller screens */
+@media screen and (max-width: 767px) {
+.sidenav {
+  height: auto;
+  padding: 15px;
+}
+.row.content {height:auto;} 
+}
