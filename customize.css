@@ -1,12 +1,22 @@
 /* Alice Liu 2017 */
 /* Alterations to Bootstrap code; some code taken from www.w3schools.com */
 
+/* set the font to Helvetica */
+body {
+	font-family: "Helvetica", Sans-Serif;
+}
 
 /* reset the default navbar alignment */
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
 	background-color: #0d661f;
+}
+
+/* active navbars are black with white text */
+.nav.navbar-nav>.active>a {
+	color: white;
+	background-color: black;
 }
 
 /* make the links in the navbar white */
@@ -24,22 +34,23 @@
 	padding: 20px;
 }
 
+/* where a sidebar is enlarged, left-align the text */
 .sidenav.col-sm-4 {
 	text-align: left;
 }
 
 /* footer is dark green with white text */
 footer {
-	background-color: #555;
+	background-color: black;
 	color: white;
 	padding: 15px;
 }
 
 /* adjust to smaller screens */
 @media screen and (max-width: 767px) {
-.sidenav {
-  height: auto;
-  padding: 15px;
-}
-.row.content {height:auto;} 
+	.sidenav {
+	  height: auto;
+	  padding: 15px;
+	}
+	.row.content {height:auto;} 
 }
