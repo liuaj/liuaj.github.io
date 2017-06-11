@@ -24,6 +24,10 @@
 	padding: 20px;
 }
 
+.sidenav.col-sm-4 {
+	text-align: left;
+}
+
 /* footer is dark green with white text */
 footer {
 	background-color: #555;
