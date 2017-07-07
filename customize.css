@@ -13,8 +13,16 @@ body {
 	background-color: #0d661f;
 }
 
+/* hovering over a bar turns the background light green and text dark green */
+.nav.navbar-nav>li a:hover {
+	color: #0d661f;
+	background-color: #d2f2d9;
+}
+
 /* active navbars are black with white text */
-.nav.navbar-nav>.active>a {
+.nav.navbar-nav>.active>a, 
+ .nav.navbar-nav>.active>a:hover,
+ .nav.navbar-nav>.active>a:focus {
 	color: white;
 	background-color: black;
 }
@@ -44,6 +52,8 @@ footer {
 	background-color: black;
 	color: white;
 	padding: 15px;
+	min-width: 100%;
+	max-width: 100%;
 }
 
 /* adjust to smaller screens */
@@ -53,4 +63,11 @@ footer {
 	  padding: 15px;
 	}
 	.row.content {height:auto;} 
+}
+
+/* make buttons dark green */
+button {
+	text-align: center;
+	background-color: #0d661f;
+	color: white;
 }

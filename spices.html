@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="spice-script.js" type="text/javascript" async></script>
     <link rel="stylesheet" href="customize.css" type="text/css" />
     <title>Spices page</title>
 
@@ -21,7 +22,7 @@
     </style>
   </head>
 
-  <body>
+  <body onload="addTable();">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <!-- <div class="navbar-header">
@@ -52,6 +53,7 @@
           
         </div>
 
+        <!-- Description of sales and table of spices -->
         <div class="col-sm-6 text-left">
           <h1>Spices</h1>
 
@@ -61,15 +63,19 @@
 
           <p><strong>Bulk price change:</strong> When ordering 3 tsp or more of any spice or combination of spices, price changes to $1.00/T ($1.00/3 tsp).</p>
 
-          <p><strong>Note:</strong> I also have peppermint, almond, and vanilla extract, as well as rosewater and orange blossom water. Since those don't package well, I haven't listed them here, but if you need one of them just send me a message and I can meet you whenever you need them.</p>
+          <p><strong>Note:</strong> I also have peppermint, almond, and vanilla extract, as well as rosewater and orange blossom water. Since those don't package well, I haven't listed them here, but if you need one of them just send me a message and I can meet you whenever you need them.</p><br>
 
           <div class="container">                                 
-            <div class=" col-sm-6 table-responsive">          
-              <table class="table table-hover">
+            <div class=" col-sm-6 table-responsive"> 
+                <!-- <button data-toggle="collapse" data-target="#metric_results" class="btn btn-primary btn-block" value="Click here"></button> -->
+                <div id="metric_results">
+                  <input type="button" style="display:none", class="btn btn-primary btn-block" id="create" value="Click here to view and order spices", data-toggle="collapse" data-target="#metric_results", onclick="document.body.addEventListener('click', addTable); addTable(); document.body.removeEventListener('click', addTable);">
+                </div>
+              <!-- <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th>Spice</th>
-                    <th>Price/TSP ($)</th>
+                    <th>SPICE</th>
+                    <th>PRICE/TSP ($)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -150,38 +156,55 @@
                     <td>1.00</td>
                   </tr>
                 </tbody>
-              </table>
+              </table> -->
             </div>
           </div>
-
-
-
         </div>
 
+        <script>
+          var total = 0;
+          for (i = 0; i < stock.length; i++) {
+            total += document.getElementById(i);
+          };
+          document.write(total);
+        </script>
+
+        <!-- Order form -->
         <div class="col-sm-4 sidenav">
           <h2 style="text-align: center">Order Here</h2>
 
           <div class="form-group" name="order-form">
-            <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+            <form id="contactform" action="//formspree.io/alice.liu.130@email.com" method="POST">
               <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+                <input type="text" class="form-control" name="name" placeholder="Enter name" name="name">
               <br>
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                <input type="email" class="form-control" name="email" placeholder="Enter email">
               </div>
               <br>
               <div class="form-group">
                 <label for="room">Room Number:</label>
-                <input type="text" class="form-control" id="room" placeholder="Enter room number" name="room">
+                <input type="text" class="form-control" name="room" placeholder="Enter room number" name="room">
               </div>
-              <br>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="spice">Add Spice:</label>
                 <input type="text" class="form-control" id="spice" placeholder="Enter spice" name="spice">
+                <input type="number" class="form-control" id="quantity" placeholder="Enter quantity" name="quantity">
+              </div> -->
+              <input type="hidden" name="_next" value="index.html" />
+              <input type="hidden" name="_subject" value="Website contact" />
+              <input type="text" name="_gotcha" style="display:none" />
+              <div style="text-align: center">
+                <button type="submit" class="btn btn-default" value="Send">Submit</button>
               </div>
             </form>
+            <!-- adapted from https://webdesign.tutsplus.com/tutorials/quick-tip-add-a-formspree-form-to-your-static-sites--cms-23870 -->
+            <script>
+              var contactform =  document.getElementById('contactform');
+              contactform.setAttribute('action', '//formspree.io/' + 'alice.liu.130' + '@' + 'email' + '.' + 'com');
+            </script>
           </div>
           
         </div>
