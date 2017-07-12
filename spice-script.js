@@ -98,7 +98,8 @@ function formDisp(index) {
         var quant = $(this).val();
         var name = stock[index][0];
         var price = stock[index][1];
-        $("#orders").val(quant + " tsp of " + name + " w/ unit price " + price);
+        var alltext = quant + " tsp of " + name + " w/ unit price " + price;
+        $("#orders").val(alltext);
     }
 }
 
