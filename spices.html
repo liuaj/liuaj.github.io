@@ -68,8 +68,11 @@
           <div class="container">                                 
             <div class="col-sm-6 table-responsive" id="mainTable"> 
                 <!-- <button data-toggle="collapse" data-target="#metric_results" class="btn btn-primary btn-block" value="Click here"></button> -->
-                <div id="metric_results">
+                <!-- <div id="metric_results">
                   <input type="button" style="display:none", class="btn btn-primary btn-block" id="create" value="Click here to view and order spices", data-toggle="collapse" data-target="#metric_results", onclick="document.body.addEventListener('click', addTable); addTable(); document.body.removeEventListener('click', addTable);">
+                </div> -->
+                <div id="metric_results" onload="document.body.addEventListener('click', addTable); addTable(); document.body.removeEventListener('click', addTable);">
+                  
                 </div>
 
               <!-- <table class="table table-hover">
@@ -199,11 +202,6 @@
                 $("#orders").val("testing text");
               </script>
 
-              <!-- <div class="form-group">
-                <label for="spice">Add Spice:</label>
-                <input type="text" class="form-control" id="spice" placeholder="Enter spice" name="spice">
-                <input type="number" class="form-control" id="quantity" placeholder="Enter quantity" name="quantity">
-              </div> -->
               <input type="hidden" name="_next" value="//liuaj.github.io/index.html" />
               <input type="hidden" name="_subject" value="Website contact" />
               <input type="text" name="_gotcha" style="display:none" />
