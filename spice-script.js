@@ -18,25 +18,6 @@ var spices = [
 	here: true},
 ];
 
-// var spicetable = 
-//   "<table class='table table-hover'>
-//     <thead>
-//       <tr>
-//         <th>SPICE</th>
-//         <th>PRICE/TSP ($)</th>
-//       </tr>
-//     </thead>
-//     <tbody>";
-
-// for (elt in spices) {
-//       spicetable += "<tr>
-//         <td>elt["name"]</td>
-//         <td>elt["price"]</td>
-//       </tr>"
-//     };
-
-// spicetable += "</tbody></table>";
-
 // adapted from stackoverflow.com
 function addTable() {
     var myTableDiv = document.getElementById("metric_results");
@@ -46,11 +27,13 @@ function addTable() {
 
     table.appendChild(tableBody);
 
+    // create headings
     var heading = new Array();
     heading[0] = "SPICE";
     heading[1] = "PRICE ($/tsp)";
     heading[2] = "QUANTITY (tsp)";
 
+    // add spices
     var stock = new Array();
     stock[0] = new Array("Allspice", "0.50", true);
     stock[1] = new Array("Anise (Star)", "0.25", true);
@@ -82,6 +65,7 @@ function addTable() {
                 inp.val = 0;
                 inp.placeholder = 0;
                 inp.id = i;
+                inp.onChange = "formDisp(" + i + ")";
         		td.appendChild(inp);
         	}
         	// fill in the other columns with regular elements
@@ -98,15 +82,35 @@ function addTable() {
     myTableDiv.appendChild(table);
 }
 
-$("#submit").click(function() {
-    // var $row = $(this).closest("tr"),
-    //     $tds = $row.find("td");
+// function to update the page near the Submit button every time a new input is entered
+function formDisp(index) {
+    if (index == undefined) {
+        index = 0;
+    }
+    // // loop through rows of main table
+    // var table = document.getElementById("mainTable");
+    // var spiceList = "";
+    // for (var i = 0, row; row = table.rows[i]; i++) {
+    //     spiceList += row;
+    // }
+    // document.getElementById("outList").innerHTML = spiceList;
+    else {
+        var quant = $(this).val();
+        var name = stock[index][0];
+        var price = stock[index][1];
+        $("#orders").val(quant + " tsp of " + name + " w/ unit price " + price);
+    }
+}
 
-    // $.each($tds, function() {
-    //     console.log($(this).text());
-    //   });
+// $("#submit").click(function() {
+//     // var $row = $(this).closest("tr"),
+//     //     $tds = $row.find("td");
 
-    document.write("hello");
-    document.write("<a href=mailto:alice.liu.130@gmail.com?subject='subject'&body='body'></a>")
-    });
+//     // $.each($tds, function() {
+//     //     console.log($(this).text());
+//     //   });
+
+//     document.write("hello");
+//     document.write("<a href=mailto:alice.liu.130@gmail.com?subject='subject'&body='body'></a>")
+//     });
 

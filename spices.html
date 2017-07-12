@@ -66,11 +66,12 @@
           <p><strong>Note:</strong> I also have peppermint, almond, and vanilla extract, as well as rosewater and orange blossom water. Since those don't package well, I haven't listed them here, but if you need one of them just send me a message and I can meet you whenever you need them.</p><br>
 
           <div class="container">                                 
-            <div class=" col-sm-6 table-responsive"> 
+            <div class="col-sm-6 table-responsive" id="mainTable"> 
                 <!-- <button data-toggle="collapse" data-target="#metric_results" class="btn btn-primary btn-block" value="Click here"></button> -->
                 <div id="metric_results">
                   <input type="button" style="display:none", class="btn btn-primary btn-block" id="create" value="Click here to view and order spices", data-toggle="collapse" data-target="#metric_results", onclick="document.body.addEventListener('click', addTable); addTable(); document.body.removeEventListener('click', addTable);">
                 </div>
+
               <!-- <table class="table table-hover">
                 <thead>
                   <tr>
@@ -172,7 +173,6 @@
         <!-- Order form -->
         <div class="col-sm-4 sidenav">
           <h2 style="text-align: center">Order Here</h2>
-          <h2 style="text-align: center">Testing</h2>
 
           <div class="form-group" name="order-form">
             <form id="contactform" action="//formspree.io/alice.liu.130@gmail.com" method="POST">
@@ -187,7 +187,11 @@
               <br>
               <div class="form-group">
                 <label for="room">Room Number:</label>
-                <input type="text" class="form-control" name="room" placeholder="Enter room number" name="room">
+                <input type="text" class="form-control" name="room" placeholder="Enter room number">
+              </div>
+              <div class="form-group">
+                <label for="orders"></label>
+                <input type="hidden" class="form-control" name="orders" id="orders">
               </div>
               <!-- <div class="form-group">
                 <label for="spice">Add Spice:</label>
@@ -197,10 +201,20 @@
               <input type="hidden" name="_next" value="//liuaj.github.io/index.html" />
               <input type="hidden" name="_subject" value="Website contact" />
               <input type="text" name="_gotcha" style="display:none" />
+              <p id="outList"></p>
               <div style="text-align: center">
                 <button type="submit" class="btn btn-default" value="Send">Submit</button>
               </div>
             </form>
+            <!-- <script>
+              // loop through rows of main table
+              var table = document.getElementById("mainTable");
+              var spiceList = "";
+              for (var i = 0, row; row = table.rows[i]; i++) {
+                spiceList += row;
+              }
+              document.getElementById("outList").innerHTML = spiceList;
+            </script> -->
             <!-- adapted from https://webdesign.tutsplus.com/tutorials/quick-tip-add-a-formspree-form-to-your-static-sites--cms-23870 -->
             <script>
               var contactform =  document.getElementById('contactform');
