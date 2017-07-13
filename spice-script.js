@@ -128,5 +128,6 @@ function tableCheck() {
         }  
         output += message;
     }
+    $("#orders").val(output);
 }
 
