@@ -114,7 +114,8 @@ function tableCheck() {
         for (var j = 0, col; col = row.cells[j]; j++) {
             // list out spice name and unit price
             if (j == 0 || j == 1) {
-                message += (col.childNodes[0].innerHTML + " ");
+                // col.childNodes[0].innerHTML
+                message += ("test" + " ");
             }
             // list out amount of spice needed if it has been ordered
             else {
