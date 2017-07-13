@@ -20,9 +20,10 @@ var spices = [
 
 // adapted from stackoverflow.com
 function addTable() {
-    var myTableDiv = document.getElementById("metric_results");
+    var myTableDiv = document.getElementById("jstable");
     var table = document.createElement('TABLE');
     table.className = 'table table-hover';
+    table.id = "spicetable";
     var tableBody = document.createElement('TBODY');
 
     table.appendChild(tableBody);
@@ -103,15 +104,29 @@ function formDisp(index) {
     }
 }
 
-// $("#submit").click(function() {
-//     // var $row = $(this).closest("tr"),
-//     //     $tds = $row.find("td");
-
-//     // $.each($tds, function() {
-//     //     console.log($(this).text());
-//     //   });
-
-//     document.write("hello");
-//     document.write("<a href=mailto:alice.liu.130@gmail.com?subject='subject'&body='body'></a>")
-//     });
+function tableCheck() {
+    var table = document.getElementById("spicetable");
+    // contains the eventual text output
+    var output = "";
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        var message = "";
+        // iterate through columns
+        for (var j = 0, col; col = row.cells[j]; j++) {
+            // list out spice name and unit price
+            if (j == 0 || j == 1) {
+                message += (col + " ");
+            }
+            // list out amount of spice needed if it has been ordered
+            else {
+                if (col == 0) {
+                    message = "";
+                }
+                else {
+                    message += (col + "\n");
+                }
+            }
+        }  
+        output += message;
+    }
+}
 
