@@ -63,7 +63,7 @@ function addTable() {
                 inp.class = "form-control"; 
                 inp.type = "number";   
                 inp.min = 0;
-                inp.val = 0;
+                inp.value = 0;
                 inp.placeholder = 0;
                 inp.id = i;
                 inp.onChange = "formDisp(" + i + ")";
