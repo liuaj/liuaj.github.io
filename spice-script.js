@@ -49,8 +49,9 @@ function addTable() {
                 inp.min = 0;
                 inp.value = 0;
                 inp.placeholder = 0;
-                inp.id = i;
-                inp.onChange = "formDisp(" + i + ")";
+                // var val = inp.value;
+                // var toSum = val * parseFloat(table.rows[i].cells[j].innerHTML);
+                inp.oninput = "formDisp()";
         		td.appendChild(inp);
         	}
         	// fill in the other columns with regular elements
@@ -70,6 +71,11 @@ function addTable() {
     myTableDiv.appendChild(table);
 }
 
+function formDisp() {
+    window.alert("test");
+}
+
+// iterates through table and feeds data on spice orders to the hidden form element
 function tableCheck() {
     var table = document.getElementById("spicetable");
     // contains the eventual text output
