@@ -1,22 +1,5 @@
-
-// // Lists to store spice names and corresponding prices
-// var spicenames = ["Allspice", "Anise (Star)", "Anise (European)"];
-// var spiceprices = [0.50, 0.25, 0.50];
-
-// Create a list of "dictionaries to store spice names and prices
-var spices = [
-	{name: "Allspice",
-	price: "0.50",
-	here: true},
-
-	{name: "Anise (Star)",
-	price: "0.25",
-	here: true},
-
-	{name: "Anise (European)",
-	price: "0.50",
-	here: true},
-];
+// Alice Liu 2017
+// Stores most Javascript for the website
 
 // adapted from stackoverflow.com
 function addTable() {
@@ -60,6 +43,7 @@ function addTable() {
                 // set width of td
                 td.width = "20%";
                 var inp = document.createElement('INPUT');
+                // adding attributes to the input cell
                 inp.class = "form-control"; 
                 inp.type = "number";   
                 inp.min = 0;
@@ -76,32 +60,14 @@ function addTable() {
                 cell.id = stock[i][j];
 	            td.appendChild(cell);
         	}
+            // add each td to the table
         	tr.appendChild(td);
         }
+        // add the entire tr to the table
         tableBody.appendChild(tr);
     }  
+    // append table so it can be displayed
     myTableDiv.appendChild(table);
-}
-
-// function to update the page near the Submit button every time a new input is entered
-function formDisp(index) {
-    if (index == undefined) {
-        index = 0;
-    }
-    // // loop through rows of main table
-    // var table = document.getElementById("mainTable");
-    // var spiceList = "";
-    // for (var i = 0, row; row = table.rows[i]; i++) {
-    //     spiceList += row;
-    // }
-    // document.getElementById("outList").innerHTML = spiceList;
-    else {
-        var quant = $(this).val();
-        var name = stock[index][0];
-        var price = stock[index][1];
-        var alltext = quant + " tsp of " + name + " w/ unit price " + price;
-        $("#orders").val(alltext);
-    }
 }
 
 function tableCheck() {
@@ -124,12 +90,16 @@ function tableCheck() {
                     message += (col.childNodes[0].value + "\n");
                 }
                 else {
+                    // don't display the row data if no spice is ordered
                     message = "";
                 }
             }
         }  
+        // add the row's data to the value to be outputted if necessary
         output += message;
     }
+    // change value of hidden button to the output
     $("#orders").val(output);
+    window.alert(output);
 }
 

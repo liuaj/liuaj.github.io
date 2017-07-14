@@ -67,12 +67,7 @@
 
           <div class="container">                                 
             <div class="col-sm-6 table-responsive" id="mainTable"> 
-                <!-- <button data-toggle="collapse" data-target="#metric_results" class="btn btn-primary btn-block" value="Click here"></button> -->
-                <!-- <div id="metric_results">
-                  <input type="button" style="display:none", class="btn btn-primary btn-block" id="create" value="Click here to view and order spices", data-toggle="collapse" data-target="#metric_results", onclick="document.body.addEventListener('click', addTable); addTable(); document.body.removeEventListener('click', addTable);">
-                </div> -->
                 <div id="jstable" onload="addTable();">
-                  <!-- "document.body.addEventListener('click', addTable); addTable(); document.body.removeEventListener('click', addTable);" -->
                 </div>
 
               <!-- <table class="table table-hover">
@@ -173,52 +168,44 @@
           document.write(total);
         </script>
 
-        <!-- Order form -->
+        <!-- order form -->
         <div class="col-sm-4 sidenav">
           <h2 style="text-align: center">Order Here</h2>
-
+          <!-- create a form to store input info -->
           <div class="form-group" name="order-form">
+            <!-- used Formspree to send info to my email -->
             <form id="contactform" action="//formspree.io/alice.liu.130@gmail.com" method="POST">
+              <!-- name field -->
               <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" name="name" placeholder="Enter name" name="name">
               <br>
+              <!-- email field -->
               <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" name="email" placeholder="Enter email">
               </div>
               <br>
+              <!-- room number field -->
               <div class="form-group">
                 <label for="room">Room Number:</label>
                 <input type="text" class="form-control" name="room" placeholder="Enter room number">
               </div>
+              <!-- hidden form to store order data -->
               <div class="form-group">
                 <label for="orders"></label>
                 <input type="hidden" class="form-control" name="orders" id="orders">
               </div>
-
-              <!-- testing that the hidden button contains value -->
-              <script>
-                $("#orders").val("testing text");
-              </script>
-
+              <!-- these are used by Formspree -->
               <input type="hidden" name="_next" value="//liuaj.github.io/index.html" />
               <input type="hidden" name="_subject" value="Website contact" />
               <input type="text" name="_gotcha" style="display:none" />
               <p id="outList"></p>
+              <!-- update value of hidden form when submit button is clicked -->
               <div style="text-align: center">
-                <button type="submit" class="btn btn-default" value="Send" onclick="tableCheck();">Submit</button>
+                <button type="submit" class="btn btn-default" value="Send" onclick="window.confirm('Confirm submission.'); tableCheck();">Submit</button>
               </div>
             </form>
-            <!-- <script>
-              // loop through rows of main table
-              var table = document.getElementById("mainTable");
-              var spiceList = "";
-              for (var i = 0, row; row = table.rows[i]; i++) {
-                spiceList += row;
-              }
-              document.getElementById("outList").innerHTML = spiceList;
-            </script> -->
             <!-- adapted from https://webdesign.tutsplus.com/tutorials/quick-tip-add-a-formspree-form-to-your-static-sites--cms-23870 -->
             <script>
               var contactform =  document.getElementById('contactform');
