@@ -114,16 +114,17 @@ function tableCheck() {
         for (var j = 0, col; col = row.cells[j]; j++) {
             // list out spice name and unit price
             if (j == 0 || j == 1) {
-                // col.childNodes[0].innerHTML
-                message += ("test" + " ");
+                // pull out text from cell
+                var text = table.rows[i].cells[j].innerHTML;
+                message += (text + "; ");
             }
             // list out amount of spice needed if it has been ordered
             else {
-                if (col.childNodes[0].value == 0) {
-                    message = "";
+                if (col.childNodes[0].value > 0) {
+                    message += (col.childNodes[0].value + "\n");
                 }
                 else {
-                    message += (col.childNodes[0].value + "\n");
+                    message = "";
                 }
             }
         }  
