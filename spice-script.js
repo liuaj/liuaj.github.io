@@ -73,12 +73,39 @@ function addTable() {
 }
 
 function formDisp(i,j) {
+    var table = document.getElementById("spicetable");
     // temporary storage for the string with the correct, updated sum
-    // var temp = "Total: $";
-    var tspAmount = table.rows[i].cells[j].childNodes[0].value;
-    // var unitPrice = (table.rows[i].cells[j - 1].innerHTML).parseFloat();
-    // temp += (tspAmount * unitPrice).toString();
-    document.getElementById("total").innerHTML = i + " " + j;
+    var temp = "Total: $"
+    // var prev = document.getElementById("total").innerHTML;
+    // prev = parseFloat(prev.substring(8));
+    // // get price per tsp of spice
+    // var unitPrice = parseFloat(table.rows[i+1].cells[j-1].innerHTML);
+    // // get no. of tsp of spice
+    // var tspAmount = table.rows[i+1].cells[j].childNodes[0].value;
+    // temp += (prev + (tspAmount * unitPrice)).toFixed(2);
+    // document.getElementById("total").innerHTML = temp;
+
+    // iterate through rows of table
+    var subtotal = 0;
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        // iterate through columns
+        for (var j = 0, col; col = row.cells[j]; j++) {
+            // if third column (tsp) is not 0, add subtotal to sum
+            if (j == 2) {
+                // get number of tsp ordered
+                var tspAmount = table.rows[i].cells[j].childNodes[0].value;
+                if (tspAmount > 0) {
+                    // get unit price
+                    var unitPrice = parseFloat(table.rows[i].cells[j-1].innerHTML);
+                    subtotal += tspAmount * unitPrice;
+                    // window.alert("unit price" + unitPrice);
+                }
+                else { continue; }
+            }
+            else { continue; }
+        }
+    }  
+    document.getElementById("total").innerHTML = temp + subtotal.toFixed(2);
 }
 
 // iterates through table and feeds data on spice orders to the hidden form element
@@ -90,7 +117,7 @@ function tableCheck() {
         var message = "";
         // iterate through columns
         for (var j = 0, col; col = row.cells[j]; j++) {
-            // list out spice name and unit price
+            // list out spice name and unit price, stored in first two columns
             if (j == 0 || j == 1) {
                 // pull out text from cell
                 var text = table.rows[i].cells[j].innerHTML;

@@ -6,6 +6,15 @@ body {
 	font-family: "Helvetica", Sans-Serif;
 }
 
+/* set the color of unclicked links to green */
+a {
+	color: green;
+}
+
+a.visited {
+	color: #d2f2d9;
+}
+
 /* reset the default navbar alignment */
 .navbar {
 	margin-bottom: 0;
