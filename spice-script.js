@@ -52,7 +52,7 @@ function addTable() {
                 // var val = inp.value;
                 // var toSum = val * parseFloat(table.rows[i].cells[j].innerHTML);
                 var runFunc = "formDisp(" + i + "," + j + ")";
-                inp.setAttribute("oninput", runFunc);
+                inp.setAttribute("oninput", "formDisp()");
         		td.appendChild(inp);
         	}
         	// fill in the other columns with regular elements
@@ -72,7 +72,7 @@ function addTable() {
     myTableDiv.appendChild(table);
 }
 
-function formDisp(i,j) {
+function formDisp() {
     var table = document.getElementById("spicetable");
     // temporary storage for the string with the correct, updated sum
     var temp = "Total: $"
@@ -105,6 +105,7 @@ function formDisp(i,j) {
             else { continue; }
         }
     }  
+    // round total to 2 decimal and append text beforehand
     document.getElementById("total").innerHTML = temp + subtotal.toFixed(2);
 }
 
