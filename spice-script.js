@@ -48,10 +48,11 @@ function addTable() {
                 inp.type = "number";   
                 inp.min = 0;
                 inp.value = 0;
-                inp.placeholder = 0;
+                inp.setAttribute("placeholder", 0);
                 // var val = inp.value;
                 // var toSum = val * parseFloat(table.rows[i].cells[j].innerHTML);
-                inp.oninput = "formDisp()";
+                var runFunc = "formDisp(" + i + "," + j + ")";
+                inp.setAttribute("oninput", runFunc);
         		td.appendChild(inp);
         	}
         	// fill in the other columns with regular elements
@@ -71,8 +72,13 @@ function addTable() {
     myTableDiv.appendChild(table);
 }
 
-function formDisp() {
-    window.alert("test");
+function formDisp(i,j) {
+    // temporary storage for the string with the correct, updated sum
+    // var temp = "Total: $";
+    var tspAmount = table.rows[i].cells[j].childNodes[0].value;
+    // var unitPrice = (table.rows[i].cells[j - 1].innerHTML).parseFloat();
+    // temp += (tspAmount * unitPrice).toString();
+    document.getElementById("total").innerHTML = i + " " + j;
 }
 
 // iterates through table and feeds data on spice orders to the hidden form element
@@ -92,8 +98,9 @@ function tableCheck() {
             }
             // list out amount of spice needed if it has been ordered
             else {
-                if (col.childNodes[0].value > 0) {
-                    message += (col.childNodes[0].value + "\n");
+                var tsp = col.childNodes[0].value;
+                if (tsp > 0) {
+                    message += (tsp + "\n");
                 }
                 else {
                     // don't display the row data if no spice is ordered

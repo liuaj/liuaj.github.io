@@ -191,13 +191,14 @@
                 <label for="room">Room Number:</label>
                 <input type="text" class="form-control" name="room" placeholder="Enter room number">
               </div>
+              <br>
               <!-- hidden form to store order data -->
               <div class="form-group">
-                <label for="orders"></label>
+                <label for="orders" id="total">Total: $0.00</label>
                 <input type="hidden" class="form-control" name="orders" id="orders">
               </div>
               <!-- these are used by Formspree -->
-              <input type="hidden" name="_next" value="//liuaj.github.io/index.html" />
+              <input type="hidden" name="_next" value="//liuaj.github.io/submitted.html" />
               <input type="hidden" name="_subject" value="Website contact" />
               <input type="text" name="_gotcha" style="display:none" />
               <p id="outList"></p>
