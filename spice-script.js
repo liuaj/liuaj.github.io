@@ -17,8 +17,18 @@ function addTable() {
     heading[1] = "PRICE ($/tsp)";
     heading[2] = "QUANTITY (tsp)";
 
-    // add spices
+    // array in which to store spice info
     var stock = new Array();
+
+    // // function to facilitate adding spices
+    // function stockAdd(name, unit, inStock) {
+    //     var toAdd = new Array(name, unit, inStock);
+    //     this.concat(toAdd);
+    // }
+
+    // // add spices
+    // stock.stockAdd("Allspice", "0.50", true);
+    
     stock[0] = new Array("Allspice", "0.50", true);
     stock[1] = new Array("Anise (Star)", "0.25", true);
     stock[2] = new Array("Anise (European)", "0.50", true);
@@ -139,7 +149,12 @@ function tableCheck() {
         // add the row's data to the value to be outputted if necessary
         output += message;
     }
+    // get value of total sum
+    totalSum = document.getElementById("total").innerHTML;
+    // append total sum to output
+    output += totalSum + "\n";
     // change value of hidden button to the output
     $("#orders").val(output);
+    window.alert(output);
 }
 
