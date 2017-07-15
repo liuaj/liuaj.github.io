@@ -20,18 +20,25 @@ function addTable() {
     // array in which to store spice info
     var stock = new Array();
 
-    // // function to facilitate adding spices
-    // function stockAdd(name, unit, inStock) {
-    //     var toAdd = new Array(name, unit, inStock);
-    //     this.concat(toAdd);
-    // }
-
-    // // add spices
-    // stock.stockAdd("Allspice", "0.50", true);
-    
-    stock[0] = new Array("Allspice", "0.50", true);
-    stock[1] = new Array("Anise (Star)", "0.25", true);
-    stock[2] = new Array("Anise (European)", "0.50", true);
+    // add spices
+    stock.push(new Array("Allspice", "0.25", true));
+    stock.push(new Array("Anise (Star)", "0.10", true));
+    stock.push(new Array("Anise (European)", "0.25", true));
+    stock.push(new Array("Bay Leaves", "0.05", true));
+    stock.push(new Array("Cardamom", "0.25", true));
+    stock.push(new Array("Cayenne (Ground)", "0.10", true));
+    stock.push(new Array("Cloves", "0.05", true));
+    stock.push(new Array("Cocoa (Ground)", "0.05", true));
+    stock.push(new Array("Coriander", "0.05", true));
+    stock.push(new Array("Cream of Tartar", "0.50", true));
+    stock.push(new Array("Cumin", "0.05", true));
+    stock.push(new Array("Ginger (Ground)", "0.05", true));
+    stock.push(new Array("Nutmeg", "0.10", true));
+    stock.push(new Array("Oregano", "0.05", true));
+    stock.push(new Array("Peppercorn (White)", "0.25", true));
+    stock.push(new Array("Rosemary", "0.10", true));
+    stock.push(new Array("Thyme", "0.10", true));
+    stock.push(new Array("Turmeric", "0.50", true));
 
     // create columns
     var tr = document.createElement('TR');
