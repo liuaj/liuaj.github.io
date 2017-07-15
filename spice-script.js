@@ -140,6 +140,5 @@ function tableCheck() {
     }
     // change value of hidden button to the output
     $("#orders").val(output);
-    window.alert(output);
 }
 
