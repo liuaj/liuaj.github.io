@@ -57,11 +57,11 @@
         <div class="col-sm-6 text-left">
           <h1>Spices</h1>
 
-          <p>All spices are listed below. They are originally whole and dried unless marked otherwise; you can choose whether to have them ground. I've tried to base the prices off worldwide unit prices, but the amount I have in stock and the difficulty of procuring a spice may also affect the price. By all means, let me know if you think something is overpriced.</p>
+          <p>All spices are listed below. They are originally whole and dried unless marked otherwise; I will grind them into powder before delivery if you don't indicate otherwise (in the comments box). I've tried to base the prices off worldwide unit prices, but the amount I have in stock and the difficulty of procuring a spice may also affect the price. By all means, let me know if you think something is overpriced.</p>
 
           <p>Spices marked with red are out of stock; please check back later!</p>
 
-          <p><strong>Bulk price change:</strong> When ordering 3 tsp or more of any spice or combination of spices, price changes to $1.00/T ($1.00/3 tsp).</p>
+          <!-- <p><strong>Bulk price change:</strong> When ordering 3 tsp or more of any spice or combination of spices, price changes to $1.00/T ($1.00/3 tsp).</p> -->
 
           <p><strong>Note:</strong> I also have peppermint, almond, and vanilla extract, as well as rosewater and orange blossom water. Since those don't package well, I haven't listed them here, but if you need one of them just send me a message and I can meet you whenever you need them.</p><br>
 
@@ -160,14 +160,6 @@
           </div>
         </div>
 
-        <script>
-          var total = 0;
-          for (i = 0; i < stock.length; i++) {
-            total += document.getElementById(i);
-          };
-          document.write(total);
-        </script>
-
         <!-- order form -->
         <div class="col-sm-4 sidenav">
           <h2 style="text-align: center">Order Here</h2>
@@ -190,6 +182,13 @@
               <div class="form-group">
                 <label for="room">Room Number:</label>
                 <input type="text" class="form-control" name="room" placeholder="Enter room number">
+              </div>
+              <br>
+              <!-- comments field -->
+              <div class="form-group">
+                <label for="comment">Comments:</label>
+                <!-- <input type="text" class="form-control" name="room" placeholder="Enter room number"> -->
+                <textarea class="form-control" rows="5" id="comment"></textarea>
               </div>
               <br>
               <!-- hidden form to store order data -->
