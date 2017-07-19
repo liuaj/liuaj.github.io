@@ -162,6 +162,5 @@ function tableCheck() {
     output += totalSum + "\n";
     // change value of hidden button to the output
     $("#orders").val(output);
-    window.alert(output);
 }
 
