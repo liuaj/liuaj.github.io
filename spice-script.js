@@ -168,6 +168,5 @@ function tableCheck() {
 function changeEmail() {
     var email = document.getElementById("email").value;
     $("#_cc").val(email);
-    window.alert(email);
 }
 
