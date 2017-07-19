@@ -90,7 +90,7 @@
               <!-- email field -->
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" oninput="changeEmail();">
               </div>
               <br>
               <!-- room number field -->
@@ -115,12 +115,6 @@
               <input type="hidden" name="_subject" value="Website contact" />
               <input type="text" name="_gotcha" style="display:none" />
               <input type="hidden" name="_cc" value="" />
-              <!-- get entered email from form and sent confirmation -->
-              <script>
-                var yourEmail = document.getElementById("email").value;
-                window.alert(yourEmail);
-                $("#_cc").val(yourEmail);
-              </script>
               <p id="outList"></p>
               <!-- update value of hidden form when submit button is clicked -->
               <div style="text-align: center">

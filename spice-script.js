@@ -164,3 +164,10 @@ function tableCheck() {
     $("#orders").val(output);
 }
 
+// updates the cc email to the entered email address
+function changeEmail() {
+    var email = document.getElementById("email").value;
+    $("#_cc").val(email);
+    window.alert(email);
+}
+
