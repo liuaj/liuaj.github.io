@@ -65,9 +65,7 @@ function addTable() {
                 inp.type = "number";   
                 inp.min = 0;
                 inp.value = 0;
-                inp.setAttribute("placeholder", 0);
-                // var val = inp.value;
-                // var toSum = val * parseFloat(table.rows[i].cells[j].innerHTML);
+                inp.setAttribute("placeholder", 0);;
                 var runFunc = "formDisp(" + i + "," + j + ")";
                 inp.setAttribute("oninput", "formDisp()");
         		td.appendChild(inp);
@@ -92,15 +90,7 @@ function addTable() {
 function formDisp() {
     var table = document.getElementById("spicetable");
     // temporary storage for the string with the correct, updated sum
-    var temp = "Total: $"
-    // var prev = document.getElementById("total").innerHTML;
-    // prev = parseFloat(prev.substring(8));
-    // // get price per tsp of spice
-    // var unitPrice = parseFloat(table.rows[i+1].cells[j-1].innerHTML);
-    // // get no. of tsp of spice
-    // var tspAmount = table.rows[i+1].cells[j].childNodes[0].value;
-    // temp += (prev + (tspAmount * unitPrice)).toFixed(2);
-    // document.getElementById("total").innerHTML = temp;
+    var temp = "Total: $";
 
     // iterate through rows of table
     var subtotal = 0;
@@ -167,6 +157,8 @@ function tableCheck() {
 // updates the cc email to the entered email address
 function changeEmail() {
     var email = document.getElementById("email").value;
-    $("#_cc").val(email);
+    document.getElementById("cc").value = email;
+    var check = document.getElementById("cc").value;
+    window.alert(check);
 }
 

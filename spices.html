@@ -114,11 +114,11 @@
               <input type="hidden" name="_next" value="//liuaj.github.io/submitted.html" />
               <input type="hidden" name="_subject" value="Website contact" />
               <input type="text" name="_gotcha" style="display:none" />
-              <input type="hidden" name="_cc" value="alicejiaqiliu@college.harvard.edu" />
+              <input type="hidden" name="_cc" value="" id="cc"/>
               <p id="outList"></p>
               <!-- update value of hidden form when submit button is clicked -->
               <div style="text-align: center">
-                <button type="submit" class="btn btn-default" value="Send" onclick="window.confirm('Confirm submission.'); tableCheck();">Submit</button>
+                <button type="submit" class="btn btn-default" value="Send" onclick="window.confirm('Confirm submission.'); changeEmail(); tableCheck();">Submit</button>
               </div>
             </form>
             <!-- adapted from https://webdesign.tutsplus.com/tutorials/quick-tip-add-a-formspree-form-to-your-static-sites--cms-23870 -->
