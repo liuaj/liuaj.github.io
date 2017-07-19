@@ -159,6 +159,5 @@ function changeEmail() {
     var email = document.getElementById("email").value;
     document.getElementById("cc").value = email;
     var check = document.getElementById("cc").value;
-    window.alert(check);
 }
 
