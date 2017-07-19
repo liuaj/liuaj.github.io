@@ -129,13 +129,16 @@ function tableCheck() {
             if (j == 0 || j == 1) {
                 // pull out text from cell
                 var text = table.rows[i].cells[j].innerHTML;
+                // if second column (unit price), format accordingly
+                if (j == 1) { text = "$" + text + "/tsp"; }
+                // separate column entries with semicolons
                 message += (text + "; ");
             }
             // list out amount of spice needed if it has been ordered
             else {
                 var tsp = col.childNodes[0].value;
                 if (tsp > 0) {
-                    message += (tsp + "\n");
+                    message += (tsp + " tsp\n");
                 }
                 else {
                     // don't display the row data if no spice is ordered
@@ -152,12 +155,16 @@ function tableCheck() {
     output += totalSum + "\n";
     // change value of hidden button to the output
     $("#orders").val(output);
+    // confirmation window for form
+    window.confirm("Confirm order: \n" + output + 
+        "A confirmation form will be sent to your email address.\n");
 }
 
 // updates the cc email to the entered email address
 function changeEmail() {
+    // get the email address from the form
     var email = document.getElementById("email").value;
+    // change the _cc field's email to this email
     document.getElementById("cc").value = email;
-    var check = document.getElementById("cc").value;
 }
 

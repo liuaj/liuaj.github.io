@@ -84,8 +84,8 @@
             <form id="contactform" action="//formspree.io/alice.liu.130@gmail.com" method="POST">
               <!-- name field -->
               <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" name="name" placeholder="Enter name" name="name">
+                <label for="name">Name (required):</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter name" name="name" required>
               <br>
               <!-- email field -->
               <div class="form-group">
@@ -95,8 +95,8 @@
               <br>
               <!-- room number field -->
               <div class="form-group">
-                <label for="room">Room Number:</label>
-                <input type="text" class="form-control" name="room" placeholder="Enter room number">
+                <label for="room">Room Number (required):</label>
+                <input type="text" class="form-control" name="room" placeholder="Enter room number" required>
               </div>
               <br>
               <!-- comments field -->
@@ -118,7 +118,7 @@
               <p id="outList"></p>
               <!-- update value of hidden form when submit button is clicked -->
               <div style="text-align: center">
-                <button type="submit" class="btn btn-default" value="Send" onclick="window.confirm('Confirm submission.'); changeEmail(); tableCheck();">Submit</button>
+                <button type="submit" class="btn btn-default" value="Send" onclick="changeEmail(); tableCheck();">Submit</button>
               </div>
             </form>
             <!-- adapted from https://webdesign.tutsplus.com/tutorials/quick-tip-add-a-formspree-form-to-your-static-sites--cms-23870 -->
