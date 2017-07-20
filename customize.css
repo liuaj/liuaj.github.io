@@ -11,8 +11,17 @@ a {
 	color: green;
 }
 
+/* set the color of visited links to dark green */
 a.visited {
 	color: #d2f2d9;
+}
+
+/* container is sized to fit window */
+.container {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 /* reset the default navbar alignment */
@@ -41,7 +50,7 @@ a.visited {
     color: white;
 }
 
-/* set height of the grid so .sidenav can be 100% */
+ /* set height of the grid so .sidenav can be 100% */
 .row.content {height: 450px}
 
 /* make sidebars be light green and 20px away from everything else */
@@ -54,15 +63,15 @@ a.visited {
 /* where a sidebar is enlarged, left-align the text */
 .sidenav.col-sm-4 {
 	text-align: left;
+	height: 100%;
 }
 
 /* footer is dark green with white text */
 footer {
 	background-color: black;
 	color: white;
-	padding: 15px;
-	min-width: 100%;
-	max-width: 100%;
+	padding: 10px;
+	width: 100%;
 }
 
 /* adjust to smaller screens */

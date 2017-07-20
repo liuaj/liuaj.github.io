@@ -105,11 +105,23 @@
                 <textarea class="form-control" rows="5" name="comment" placeholder="Enter comment"></textarea>
               </div>
               <br>
-              <!-- hidden form to store order data -->
+              <!-- hidden form element to store order data -->
               <div class="form-group">
                 <label for="orders" id="total">Total: $0.00</label>
                 <input type="hidden" class="form-control" name="orders" id="orders">
               </div>
+              <!-- hidden form element to send thank you message -->
+              <div class="form-group">
+                <label for=""></label>
+                <input type="hidden" class="form-control" name="" id="message">
+              </div>
+              <!-- add value to the message above -->
+              <script>
+                // thank-you message
+                var thanks = "Thank you for your order. Have fun cooking!";
+                // change the value of the form input to the thank-you
+                document.getElementById("message").value = thanks;
+              </script>
               <!-- these are used by Formspree -->
               <input type="hidden" name="_next" value="//liuaj.github.io/submitted.html" />
               <input type="hidden" name="_subject" value="Website contact" />
