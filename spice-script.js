@@ -23,15 +23,17 @@ function addTable() {
     // add spices
     stock.push(new Array("Allspice", "0.25", true));
     stock.push(new Array("Anise (Star)", "0.10", true));
-    stock.push(new Array("Anise (European)", "0.25", true));
+    stock.push(new Array("Anise (Spanish)", "0.25", true));
     stock.push(new Array("Bay Leaves", "0.05", true));
-    stock.push(new Array("Cardamom", "0.25", true));
+    stock.push(new Array("Caraway", "N/A", false));
+    stock.push(new Array("Cardamom", "0.10", true));
     stock.push(new Array("Cayenne (Ground)", "0.10", true));
     stock.push(new Array("Cloves", "0.05", true));
     stock.push(new Array("Cocoa (Ground)", "0.05", true));
     stock.push(new Array("Coriander", "0.05", true));
     stock.push(new Array("Cream of Tartar", "0.50", true));
     stock.push(new Array("Cumin", "0.05", true));
+    stock.push(new Array("Fenugreek (Leaves)", "0.10", true));
     stock.push(new Array("Ginger (Ground)", "0.05", true));
     stock.push(new Array("Nutmeg", "0.10", true));
     stock.push(new Array("Oregano", "0.05", true));
@@ -52,9 +54,9 @@ function addTable() {
     // create rows
     for (i = 0; i < stock.length; i++) {
         var tr = document.createElement('TR');
+        // create cells in row
         for (j = 0; j < stock[i].length; j++) {
         	var td = document.createElement('TD');
-
         	// create a counter in the third column
         	if (j == stock[i].length - 1) {
                 // set width of td
@@ -65,7 +67,13 @@ function addTable() {
                 inp.type = "number";   
                 inp.min = 0;
                 inp.value = 0;
-                inp.setAttribute("placeholder", 0);;
+                // placeholder value is 0 for all input cells
+                inp.setAttribute("placeholder", 0);
+                // disable input and color row red if out of stock
+                if ((stock[i])[2] == false) { 
+                    inp.disabled = "disabled"; 
+                    tr.setAttribute("bgcolor", "ff7178");
+                }
                 var runFunc = "formDisp(" + i + "," + j + ")";
                 inp.setAttribute("oninput", "formDisp()");
         		td.appendChild(inp);
@@ -79,6 +87,7 @@ function addTable() {
         	}
             // add each td to the table
         	tr.appendChild(td);
+
         }
         // add the entire tr to the table
         tableBody.appendChild(tr);

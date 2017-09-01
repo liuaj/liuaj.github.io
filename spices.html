@@ -18,7 +18,7 @@
 
     <style>
       /* set height of the grid so .sidenav can be 100% */
-      .row.content {height: 1400px}
+      .row.content {height: 1550px}
     </style>
   </head>
 
@@ -57,15 +57,21 @@
         <div class="col-sm-6 text-left">
           <h1>Spices</h1>
 
-          <p>All spices are listed below. They are originally whole and dried unless marked otherwise; <strong>I will grind them into powder before delivery if you don't indicate otherwise (in the comments box)</strong>.</p>
+          <p>All spices are listed below. They are originally whole and dried unless marked otherwise; <strong>I will grind all non-herbs into powder before delivery if you don't indicate otherwise (in the comments box)</strong>.</p>
 
-          <p>I've tried to base the prices off worldwide unit prices, but the amount I have in stock and the difficulty of procuring a spice may also affect the price. By all means, let me know if you think something is overpriced. The idea is that payments can easily be made with coins.</p>
+          <p>Spices marked with red are out of stock or soon-to-be-obtained; please check back later!</p>
 
-          <p>Spices marked with red are out of stock; please check back later!</p>
+          <p>Also, there is cinnamon and some powdered sugar in the dhall if you need it. There's a spice rack too, but I'm not sure how often it's refreshed.</p>
 
           <!-- <p><strong>Bulk price change:</strong> When ordering 3 tsp or more of any spice or combination of spices, price changes to $1.00/T ($1.00/3 tsp).</p> -->
 
-          <p><strong>Note:</strong> I also have peppermint, almond, and vanilla extract, as well as rosewater and orange blossom water. Since those don't package well, I haven't listed them here, but if you need one of them just send me a message and I can meet you whenever you need them.</p><br>
+          <p><strong>Note:</strong> I also have peppermint, almond, and vanilla extract, as well as rosewater and orange blossom water. Since those don't package well, I haven't listed them here, but if you need one of them just send me a message and I can meet you whenever you need them.</p>
+
+          <p><strong>Warning:</strong> Any spice can be dangerous if consumed in large enough quantities. Nutmeg in particular acts as a hallucinogenic drug after one or two tablespoons. It's <a href="https://well.blogs.nytimes.com/2014/11/25/a-warning-on-nutmeg/?mcubz=1">not a pleasant high</a>, so don't try it. I <i>will</i> question you if you order that much, especially since most recipes require only 1/4-1/2 tsp.</p>
+
+          <p><strong>Need help with conversions? Check <a href="http://startcooking.com/measurement-and-conversion-charts" target="_blank">here</a> for a start.</strong></p>
+
+          <br>
 
           <div class="container">                                 
             <div class="col-sm-6 table-responsive" id="mainTable"> 
@@ -73,6 +79,7 @@
                 </div>
             </div>
           </div>
+          <p>I've tried to base the prices off worldwide unit prices, but the amount I have in stock and the difficulty of procuring a spice may also affect the price. By all means, let me know if you think something is overpriced. The idea is that payments can easily be made with coins.</p>
         </div>
 
         <!-- order form -->
@@ -81,7 +88,7 @@
           <!-- create a form to store input info -->
           <div class="form-group" name="order-form">
             <!-- used Formspree to send info to my email -->
-            <form id="contactform" action="//formspree.io/alice.liu.130@gmail.com" method="POST">
+            <form id="contactform" action="//formspree.io/alicejiaqiliu@college.harvard.edu" method="POST">
               <!-- name field -->
               <div class="form-group">
                 <label for="name">Name (required):</label>
@@ -118,7 +125,7 @@
               <!-- add value to the message above -->
               <script>
                 // thank-you message
-                var thanks = "Thank you for your order. Have fun cooking!";
+                var thanks = "Thank you for your order. A follow-up email will be sent to you shortly. Have fun cooking!";
                 // change the value of the form input to the thank-you
                 document.getElementById("message").value = thanks;
               </script>
@@ -136,7 +143,7 @@
             <!-- adapted from https://webdesign.tutsplus.com/tutorials/quick-tip-add-a-formspree-form-to-your-static-sites--cms-23870 -->
             <script>
               var contactform =  document.getElementById('contactform');
-              contactform.setAttribute('action', '//formspree.io/' + 'alice.liu.130' + '@' + 'gmail' + '.' + 'com');
+              contactform.setAttribute('action', '//formspree.io/' + 'alicejiaqiliu' + '@' + 'college' + '.' + 'harvard' + '.' + 'edu');
             </script>
           </div>
           
