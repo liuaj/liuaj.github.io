@@ -166,7 +166,7 @@ function tableCheck() {
     $("#orders").val(output);
     // confirmation window for form
     window.confirm("Confirm order: \n" + output + 
-        "A confirmation form will be sent to your email address.\n");
+        "A confirmation message will be sent to your email address.\n");
 }
 
 // updates the cc email to the entered email address
