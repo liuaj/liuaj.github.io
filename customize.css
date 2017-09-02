@@ -104,6 +104,13 @@ button {
 	color: white;
 }
 
-.navbar-brand {
-	color: white;
+/* color of navbar title */
+.navbar-default .navbar-brand {
+    color: white;
+    background-color: black;
+}
+
+.navbar-default .navbar-brand:hover {
+	color: #d2f2d9;
+	background-color: black;
 }
