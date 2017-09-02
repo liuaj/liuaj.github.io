@@ -1,11 +1,16 @@
 /* Alice Liu 2017 */
 /* Alterations to Bootstrap code; some code taken from www.w3schools.com */
 
+
+/* Main content */
+.main {
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
 /* set the font to Helvetica */
 body {
 	font-family: "Helvetica", Sans-Serif;
 }
-
 
 /* details for the header; taken from 
 https://stackoverflow.com/questions/11525132/css-centred-header-image */
@@ -38,11 +43,15 @@ a.visited {
 	color: #d2f2d9;
 }
 
-/* reset the default navbar alignment */
+/* reset the default navbar alignment; help from w3schools website */
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
 	background-color: #0d661f;
+	position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    overflow: hidden
 }
 
 /* hovering over a bar turns the background light green and text dark green */
@@ -61,7 +70,20 @@ a.visited {
 
 /* make the links in the navbar white */
 .nav.navbar-nav li a {
+    color: #d2f2d9;
+}
+
+/* color of navbar title */
+.navbar-default .navbar-brand {
     color: white;
+    background-color: black;
+    z-index: 9999;
+}
+
+/* change colors of navbar title when hovered */
+.navbar-default .navbar-brand:hover {
+	color: white;
+	background-color: black;
 }
 
  /* set height of the grid so .sidenav can be 100% */
@@ -78,9 +100,10 @@ a.visited {
 .sidenav.col-sm-4 {
 	text-align: left;
 	height: 100%;
+	z-index: -1;
 }
 
-/* footer is dark green with white text */
+/* footer is black with white text */
 footer {
 	background-color: black;
 	color: white;
@@ -104,13 +127,3 @@ button {
 	color: white;
 }
 
-/* color of navbar title */
-.navbar-default .navbar-brand {
-    color: #d2f2d9;
-    background-color: black;
-}
-
-.navbar-default .navbar-brand:hover {
-	color: white;
-	background-color: black;
-}
