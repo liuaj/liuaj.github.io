@@ -109,11 +109,6 @@ a.visited {
 /* where a sidebar is enlarged, left-align the text */
 .sidenav.col-sm-4 {
 	text-align: left;
-	z-index: -1;
-}
-
-.sidenav.col-sm-2 {
-	z-index: -1;
 }
 
 /* footer is black with white text */
