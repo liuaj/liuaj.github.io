@@ -63,6 +63,21 @@ a.visited {
     overflow: hidden
 }
 
+/* border of the hamburger menu is white */
+.navbar-default .navbar-toggle {
+	border-color: white;
+}
+
+/* change background color when hovered */
+.navbar-default .navbar-toggle:hover {
+    background-color: black;
+}
+
+/* color of lines in hamburger menu */
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #f4bcb0;
+}
+
 /* hovering over a bar turns the background light and text dark */
 .nav.navbar-nav>li a:hover {
 	color: #b6391f;
@@ -84,9 +99,8 @@ a.visited {
 
 /* color of navbar title */
 .navbar-default .navbar-brand {
-    color: white;
-    background-color: black;
-    z-index: 999;
+    color: #f4bcb0;
+    background-color: #b6391f;
 }
 
 /* change colors of navbar title when hovered */
@@ -127,9 +141,14 @@ footer {
 	text-align: center;*/
 }
 
+/* hover color of the table is light */
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: #f4bcb0;
 }
+
+input[type=number]{
+    width: 100%;
+} 
 
 /* adjust to smaller screens */
 @media screen and (max-width: 767px) {

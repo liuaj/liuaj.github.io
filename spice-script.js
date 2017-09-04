@@ -29,7 +29,6 @@ function addTable() {
     stock.push(new Array("Cardamom", "0.10", true));
     stock.push(new Array("Cayenne (Ground)", "0.10", true));
     stock.push(new Array("Cloves", "0.05", true));
-    stock.push(new Array("Cocoa (Ground)", "0.05", true));
     stock.push(new Array("Coriander", "0.05", true));
     stock.push(new Array("Cream of Tartar", "0.50", true));
     stock.push(new Array("Cumin", "0.05", true));
