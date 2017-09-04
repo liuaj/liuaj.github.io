@@ -47,6 +47,11 @@ a {
 	color: #e45a3c;
 }
 
+/* set color of hovered links to dark */
+a:hover {
+	color: #b6391f;
+}
+
 /* set the color of visited links to dark */
 a.visited {
 	color: #b6391f;
@@ -146,6 +151,7 @@ footer {
   background-color: #f4bcb0;
 }
 
+/* number inputs scale to fit */
 input[type=number]{
     width: 100%;
 } 
