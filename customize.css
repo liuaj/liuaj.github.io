@@ -1,6 +1,14 @@
 /* Alice Liu 2017 */
 /* Alterations to Bootstrap code; some code taken from www.w3schools.com */
 
+/* Some hex codes for reference:
+	Dark orange:  #b6391f;
+	Light orange:  #f4bcb0 ;
+	Orange:  #e45a3c;
+	Dark green: #0d661;
+	Light green: #d2f2d9;
+	Green: green; */
+
 /* Main content */
 .main {
     margin-top: 30px; /* Add a top margin to avoid content overlay */
@@ -34,31 +42,31 @@ div#wrapperHeader div#header img {
  margin:0 auto;
 }
 
-/* set the color of unclicked links to green */
+/* set the color of unclicked links to standard color */
 a {
-	color: green;
+	color: #e45a3c;
 }
 
-/* set the color of visited links to dark green */
+/* set the color of visited links to dark */
 a.visited {
-	color: #d2f2d9;
+	color: #b6391f;
 }
 
 /* reset the default navbar alignment; help from w3schools website */
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
-	background-color: #0d661f;
+	background-color: #b6391f;
 	/*position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */*/
     width: 100%; /* Full width */
     overflow: hidden
 }
 
-/* hovering over a bar turns the background light green and text dark green */
+/* hovering over a bar turns the background light and text dark */
 .nav.navbar-nav>li a:hover {
-	color: #0d661f;
-	background-color: #d2f2d9;
+	color: #b6391f;
+	background-color: #f4bcb0;
 }
 
 /* active navbars are black with white text */
@@ -69,9 +77,9 @@ a.visited {
 	background-color: black;
 }
 
-/* make the links in the navbar white */
+/* make the links in the navbar light */
 .nav.navbar-nav li a {
-    color: #d2f2d9;
+    color: #f4bcb0;
 }
 
 /* color of navbar title */
@@ -90,9 +98,9 @@ a.visited {
  /* set height of the grid so .sidenav can be 100% */
 .row.content {height: 450px}
 
-/* make sidebars be light green and 20px away from everything else */
+/* make sidebars be light and 20px away from everything else */
 .sidenav {
-	background-color: #d2f2d9;
+	background-color: #f4bcb0;
 	height: 100%;
 	padding: 20px;
 	padding-bottom: 0px;
@@ -134,10 +142,10 @@ footer {
 	.row.content {height:auto;} 
 }
 
-/* make buttons dark green */
+/* make buttons dark */
 button {
 	text-align: center;
-	background-color: #0d661f;
+	background-color: #b6391f;
 	color: white;
 }
 
