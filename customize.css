@@ -127,6 +127,9 @@ footer {
 	text-align: center;*/
 }
 
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #f4bcb0;
+}
 
 /* adjust to smaller screens */
 @media screen and (max-width: 767px) {
