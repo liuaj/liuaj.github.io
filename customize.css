@@ -167,6 +167,16 @@ input[type=number]{
     padding-top: 5px;
 }
 
+.img {
+	align: left;
+}
+
+#caption {
+	padding-bottom: 20px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
 /* border for images on the projects page */
 .col-sm-8 img {
     border: 2px solid #b6391f;
