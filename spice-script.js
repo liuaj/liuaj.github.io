@@ -1,6 +1,10 @@
 // Alice Liu 2017
 // Stores most Javascript for the website
 
+var height = $('.col-sm-8 text-left').height();
+    
+$('.col-sm-2 sidenav').height(height);
+
 // adapted from stackoverflow.com
 function addTable() {
     var myTableDiv = document.getElementById("jstable");

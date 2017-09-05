@@ -156,6 +156,26 @@ input[type=number]{
     width: 100%;
 } 
 
+/* alignment of images */
+.image
+{
+    float: left;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+/* border for images on the projects page */
+.col-sm-8 img {
+    border: 2px solid #b6391f;
+    background-color: #f4bcb0;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+
 /* adjust to smaller screens */
 @media screen and (max-width: 767px) {
 	.sidenav {
